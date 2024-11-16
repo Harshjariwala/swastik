@@ -1,0 +1,20 @@
+.image-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    margin-top: 180px; /* Space between header and image */
+    width: 100%; /* Ensure the container takes the full width */
+}
+
+.banner-image {
+    width: 150px; /* Set a fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any space below the image */
+}
+
+.logo-heading {
+    font-size: 40px; /* Adjust the size of the heading */
+    text-align: center; /* Ensure the text is centered */
+    margin: 0; /* Remove any default margin */
+    color: #f07909; /* Adjust the color of the text */
+}

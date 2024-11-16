@@ -1,0 +1,53 @@
+/* Styling for the Header */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    color: #e31e24;
+    position: fixed;  /* Makes the header stick to the top */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Full width */
+    z-index: 1000; /* Ensures header stays above other content */
+}
+
+.header h2 {
+    margin: 0;
+}
+
+/* Container for Heading (Image and Logo) */
+.heading-container1 {
+    text-align: center;
+    padding: 0px;  /* Ensure content is not hidden behind fixed header */
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the Image container */
+.image-container {
+    display: flex;
+    margin: 0px; /* Space between header and image */
+    padding: 0px;
+}
+
+/* Custom Height and Width for the Banner Image */
+.banner-image1 {
+    width: 200px;  /* Set your custom width */
+    height: 50px; /* Set your custom height */
+    object-fit: contain; /* Maintain aspect ratio if the aspect ratio of the image is not 1:1 */
+    display: flex; /* Remove any space below the image */
+    margin : 0px;
+    padding: 0px;
+    max-height: 50px;
+    margin-top: -80px;
+}
+
+/* Logo Heading Styling */
+.logo-heading3 {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    margin-top: -15px;
+    color: #f07909; /* Adjust color as desired */
+}
