@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/Styles/Header.css'; // Make sure the correct path is used
 
-function HeadeingImage() {
+function HeadingImage() {
     return (
         <div className="heading-container1">
             <div className="image-container">
@@ -16,4 +16,4 @@ function HeadeingImage() {
     );
 }
 
-export default HeadeingImage;
+export default HeadingImage;

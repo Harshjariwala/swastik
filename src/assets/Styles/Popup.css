@@ -1,0 +1,59 @@
+.popup-overlay{
+    background: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.75)),to(rgba(0,0,0,0.85)));
+    background: -o-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85));
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85));
+    padding: 0 15px;
+}
+.popup-content{
+    max-width: 650px;
+    width: 100%;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.popup-content canvas{
+    background: rgb(229 231 235);
+}
+.popup-content button{
+    font-family: "Open Sans", sans-serif;
+    max-width: 100%;
+    width: 100%;
+    min-height: 40px;
+    padding: 0;
+    border-radius: 6px;
+    -webkit-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    outline: none;
+    text-transform: uppercase;
+}
+.popup-content button.bg-gray-500{
+    background: #6b7280;
+    border: 1.5px solid #6b7280;
+}
+.popup-content button.bg-green-500{
+    background: #03a84e;
+    border: 1.5px solid #03a84e;
+}
+.popup-content button.bg-red-500{
+    background: #e31e24;
+    border: 1.5px solid #e31e24;
+}
+.popup-content button.bg-gray-500:hover{
+    background: #fff;
+    color:#6b7280;
+}
+.popup-content button.bg-green-500:hover{
+    background: #fff;
+    color:#03a84e;
+}
+.popup-content button.bg-red-500:hover{
+    background: #fff;
+    color:#e31e24;
+}

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import HeadingImage from "../components/HeadingImage";
 import SignaturePopup from "../components/SignaturePopup";
+import '../assets/Styles/Form.css';
 
-export default function ServiceDetailPage() {
+function ServiceDetailPage() {
   const [custSignatureData, setCustSignatureData] = useState(null);
   const [engSignatureData, setEngSignatureData] = useState(null);
 
@@ -36,12 +36,12 @@ export default function ServiceDetailPage() {
 
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen px-4 overflow-y-auto h-[80vh]">
-        <div className="bg-white border rounded-lg px-8 py-6 max-w-2xl w-full overflow-y-auto h-[80vh]">
-          <h2 className="text-2xl font-medium mb-4">Service Details</h2>
+      <div className="form-wrapper service-form-wrapper">
+        <div className="shadow-3xl rounded-xl">
+          <h2 className="form-title">Service Details</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* Remark of Service Engineer */}
-            <div className="mb-4">
+            <div className="form-group">
               <label
                 htmlFor="remark"
                 className="block text-black-800 font-medium mb-2"
@@ -59,9 +59,8 @@ export default function ServiceDetailPage() {
                 <p className="text-red-500 text-sm">{errors.remark.message}</p>
               )}
             </div>
-
             {/* Service Charge Detail */}
-            <div className="mb-4">
+            <div className="form-group">
               <label
                 htmlFor="charge"
                 className="block text-black-800 font-medium mb-2"
@@ -81,9 +80,8 @@ export default function ServiceDetailPage() {
                 <p className="text-red-500 text-sm">{errors.charge.message}</p>
               )}
             </div>
-
             {/* Customer Email */}
-            <div className="mb-4">
+            <div className="form-group">
               <input
                 {...register("email", {
                   required: "Customer email is required",
@@ -101,9 +99,8 @@ export default function ServiceDetailPage() {
                 <p className="text-red-500 text-sm">{errors.email.message}</p>
               )}
             </div>
-
             {/* Mode of Payment */}
-            <div className="mb-4">
+            <div className="form-group">
               <label
                 htmlFor="paymentMode"
                 className="block text-black-800 font-medium mb-2"
@@ -130,42 +127,39 @@ export default function ServiceDetailPage() {
                 </p>
               )}
             </div>
-
             {/* Signature Popups */}
-            <div className="mb-4">
+            <div className="form-btn-group">
               <SignaturePopup
                 onSave={handleCustSaveSignature}
                 name="Sign of Customer"
               />
               {custSignatureData && (
                 <div className="mt-4">
-                  <h2 className="text-lg font-medium">Saved Signature:</h2>
+                  <h2 className="text-lg font-medium">Saved Signature of Customer</h2>
                   <img
                     src={custSignatureData}
                     alt="Customer Signature"
-                    className="border mt-2"
+                    className="sign-box border mt-2"
                   />
                 </div>
               )}
             </div>
-
-            <div className="mb-4">
+            <div className="form-btn-group">
               <SignaturePopup
                 onSave={handleEngSaveSignature}
                 name="Sign of Engineer"
               />
               {engSignatureData && (
                 <div className="mt-4">
-                  <h2 className="text-lg font-medium">Saved Signature:</h2>
+                  <h2 className="text-lg font-medium">Saved Signature of Engineer</h2>
                   <img
                     src={engSignatureData}
                     alt="Engineer Signature"
-                    className="border mt-2"
+                    className="sign-box border mt-2"
                   />
                 </div>
               )}
             </div>
-
             {/* Submit Button */}
             <button
               type="submit"
@@ -179,3 +173,5 @@ export default function ServiceDetailPage() {
     </>
   );
 }
+
+export default ServiceDetailPage;

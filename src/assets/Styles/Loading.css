@@ -1,20 +1,47 @@
-.image-container {
+.loading-container{
+    min-height: 400px;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center; /* Horizontally center the image */
-    align-items: center; /* Vertically center the image */
-    margin-top: 180px; /* Space between header and image */
-    width: 100%; /* Ensure the container takes the full width */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; 
+    -webkit-box-align: center; 
+        -ms-flex-align: center; 
+            align-items: center;
+    gap: 10px;
+    background: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.75)),to(rgba(0,0,0,0.85))),url('../images/new-bg-1.png');
+    background: -o-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('../images/new-bg-1.png');
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('../images/new-bg-1.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
 }
-
+.image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; 
+    -webkit-box-align: center; 
+        -ms-flex-align: center; 
+            align-items: center;
+    width: 100%;
+}
 .banner-image {
-    width: 150px; /* Set a fixed width for the image */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any space below the image */
+    width: 150px;
+    height: auto; 
+    display: block; 
 }
-
 .logo-heading {
-    font-size: 40px; /* Adjust the size of the heading */
-    text-align: center; /* Ensure the text is centered */
-    margin: 0; /* Remove any default margin */
-    color: #f07909; /* Adjust the color of the text */
+    font-size: 40px;
+    text-align: center; 
+    margin: 0;
+    color: #f07909;
 }

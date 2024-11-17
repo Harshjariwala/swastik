@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm, useFieldArray } from "react-hook-form";
+import '../assets/Styles/Form.css';
 
 const PartDetailPage = () => {
   // Initialize the form hook
@@ -29,13 +30,13 @@ const PartDetailPage = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen px-4">
-        <div className="bg-white border rounded-lg px-8 py-6 max-w-3xl w-full">
-          <h1 className="text-2xl font-medium mb-4">Part/Parts Details</h1>
+      <div className="form-wrapper parts-form-wrapper">
+        <div className="shadow-3xl rounded-xl">
+          <h1 className="form-title">Parts Details</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             {fields.map((item, index) => (
               <div key={item.id} className="form-group space-y-4">
-                <div className="mb-4">
+                <div className="form-group">
                   <input
                     type="number"
                     placeholder="Quantity"
@@ -50,7 +51,7 @@ const PartDetailPage = () => {
                     </p>
                   )}
                 </div>
-                <div className="mb-4">
+                <div className="form-group">
                   <label
                     htmlFor="remark"
                     className="block text-black-800 font-medium mb-2"
@@ -60,7 +61,7 @@ const PartDetailPage = () => {
                   <textarea
                     placeholder="Part Description"
                     {...register(`parts.${index}.detail`, {
-                      required: "Part Description is required",
+                      required: "Part description is required",
                     })}
                     className="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
                     rows="3"
@@ -73,7 +74,7 @@ const PartDetailPage = () => {
                 </div>
               </div>
             ))}
-            <div className="mb-4 flex flex-col space-y-5">
+            <div className="flex flex-col space-y-5">
               <button
                 type="button"
                 onClick={() => append({ quantity: "", detail: "" })}

@@ -4,12 +4,14 @@ import '../assets/Styles/Header.css';
 
 function Header(){
     return (
-        <>
-            <header className="header gap-4 items-start">
-                <img src="/banner.ico" alt="Swastik Enterprise Icon" className="w-10 h-10 mr-0" />
-                <h2><b>Swastik Enterprise</b></h2>
-            </header>
-        </>
+        <header className="main-header">
+            <div className="inner-wrapper">
+                <a href='/' className="logo">
+                    <img src="/banner.ico" alt="Swastik Enterprise Icon" className="company-logo" />
+                    <h2 className="company-title">Swastik Enterprise</h2>
+                </a>
+            </div>
+        </header>
     );
 }
 

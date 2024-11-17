@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import HeadingImage from "../components/HeadingImage";
+import '../assets/Styles/Form.css';
 
 function ProductDetailPage() {
   const {
@@ -49,12 +49,12 @@ function ProductDetailPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 py-10 overflow-y-auto h-[80vh]">
-    <div className="bg-white border rounded-lg px-8 py-10 max-w-2xl w-full overflow-y-auto h-[80vh]">
-      <h2 className="text-2xl font-medium mb-4">Product Details</h2>
+    <div className="form-wrapper product-form-wrapper overflow-y-auto h-[80vh]">
+    <div className="shadow-3xl rounded-xl">
+      <h2 className="form-title">Product Details</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Product Description */}
-        <div className="mb-4">
+        <div className="form-group">
           <label htmlFor="productDescription" className="block text-black-800 font-medium mb-2">
             Product Description
           </label>
@@ -64,7 +64,7 @@ function ProductDetailPage() {
             className="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
             rows="3"
             {...register("productDescription", {
-              required: "Product Description is required",
+              required: "Product description is required",
             })}
             onInput={(e) => {
               e.target.style.height = "auto";
@@ -75,36 +75,32 @@ function ProductDetailPage() {
             <p className="text-red-500 text-sm">{errors.productDescription.message}</p>
           )}
         </div>
-  
         {/* Valve Serial Number */}
-        <div className="mb-4">
+        <div className="form-group">
           <input
             type="text"
             id="valveSerialNumber"
             placeholder="Valve Serial Number"
             className="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
             {...register("valveSerialNumber", {
-              required: "Valve Serial Number is required",
+              required: "Valve serial number is required",
             })}
           />
           {errors.valveSerialNumber && (
             <p className="text-red-500 text-sm">{errors.valveSerialNumber.message}</p>
           )}
         </div>
-  
         {/* Checkboxes (U/W, O/W, etc.) */}
-        <div className="mb-4 flex items-center">
+        <div className="form-group checkbox-ele flex items-center">
           <input type="checkbox" id="uw" {...register("uw")} className="mr-2" />
           <label htmlFor="uw">U/W</label>
         </div>
-  
-        <div className="mb-4 flex items-center">
+        <div className="form-group flex items-center">
           <input type="checkbox" id="ow" {...register("ow")} className="mr-2" />
           <label htmlFor="ow">O/W</label>
         </div>
-  
         {/* Observation */}
-        <div className="mb-4">
+        <div className="form-group">
           <input
             type="text"
             id="observation"
@@ -118,32 +114,30 @@ function ProductDetailPage() {
             <p className="text-red-500 text-sm">{errors.observation.message}</p>
           )}
         </div>
-  
         {/* Steps Taken */}
-        <div className="mb-4">
+        <div className="form-group">
           <input
             type="text"
             id="stepsTaken"
             placeholder="Steps Taken"
             className="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
             {...register("stepsTaken", {
-              required: "Steps Taken is required",
+              required: "Steps taken is required",
             })}
           />
           {errors.stepsTaken && (
             <p className="text-red-500 text-sm">{errors.stepsTaken.message}</p>
           )}
         </div>
-  
         {/* Status of Service */}
-        <div className="mb-4">
+        <div className="form-group">
           <label htmlFor="statusOfService" className="block text-black-800 font-medium mb-2">
             Status Of Service
           </label>
           <select
             id="statusOfService"
             {...register("statusOfService", {
-              required: "Status of Service is required",
+              required: "Status of service is required",
             })}
             className="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
           >
@@ -155,9 +149,8 @@ function ProductDetailPage() {
             <p className="text-red-500 text-sm">{errors.statusOfService.message}</p>
           )}
         </div>
-  
         {/* Additional Checkboxes */}
-        <div className="mb-4 flex items-center">
+        <div className="form-group checkbox-ele flex items-center">
           <input
             type="checkbox"
             id="workingSatisfactory"
@@ -166,7 +159,7 @@ function ProductDetailPage() {
           />
           <label htmlFor="workingSatisfactory">Working Satisfactory</label>
         </div>
-        <div className="mb-4 flex items-center">
+        <div className="form-group checkbox-ele flex items-center">
           <input
             type="checkbox"
             id="underObservation"
@@ -175,7 +168,7 @@ function ProductDetailPage() {
           />
           <label htmlFor="underObservation">Under Observation</label>
         </div>
-        <div className="mb-4 flex items-center">
+        <div className="form-group checkbox-ele flex items-center">
           <input
             type="checkbox"
             id="runningWithDefect"
@@ -184,7 +177,7 @@ function ProductDetailPage() {
           />
           <label htmlFor="runningWithDefect">Running with Defect</label>
         </div>
-        <div className="mb-4 flex items-center">
+        <div className="form-group flex items-center">
           <input
             type="checkbox"
             id="pending"
@@ -193,9 +186,8 @@ function ProductDetailPage() {
           />
           <label htmlFor="pending">Pending</label>
         </div>
-  
         {/* Time-In */}
-        <div className="mb-4">
+        <div className="form-group">
           <input
             type="text"
             id="timeIn"
@@ -207,9 +199,8 @@ function ProductDetailPage() {
             <p className="text-red-500 text-sm">{errors.timeIn.message}</p>
           )}
         </div>
-  
         {/* Time-Out */}
-        <div className="mb-4">
+        <div className="form-group">
           <input
             type="text"
             id="timeOut"
@@ -225,7 +216,7 @@ function ProductDetailPage() {
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
         >
           SAVE AND NEXT
         </button>

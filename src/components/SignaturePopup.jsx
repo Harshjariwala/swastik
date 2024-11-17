@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import SignaturePad from 'react-signature-canvas';
 import Popup from 'reactjs-popup';
+import '../assets/Styles/Popup.css';
 
 const SignaturePopup = ({ onSave, name }) => {
   const signCanvas = useRef();
@@ -35,28 +36,30 @@ const SignaturePopup = ({ onSave, name }) => {
         }
       >
         {(close) => (
-          <div className="w-full min-h-48 bg-white p-8 rounded-lg shadow-2xl space-y-6 border border-solid border-black">
+          <div className="w-full min-h-48 p-8 rounded-lg">
             <SignaturePad
               ref={signCanvas}
               canvasProps={{ className: "w-full min-h-48" }}
             />
-            <button
-              type="button"
-              className="mt-4 w-full px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none"
-              onClick={handleClear}
-            >
-              Clear
-            </button>
-            <button
-              type="button"
-              className="mt-4 w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none"
-              onClick={()=>{
-                handleSave()
-                close()
-            }}
-            >
-              Save
-            </button>
+            <div className='flex gap-x-3 mt-4'>
+              <button
+                type="button"
+                className="w-full px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none"
+                onClick={handleClear}
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                className="w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none"
+                onClick={()=>{
+                  handleSave()
+                  close()
+              }}
+              >
+                Save
+              </button>
+            </div>
             <button
               type="button"
               className="mt-4 w-full px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none"
@@ -67,7 +70,6 @@ const SignaturePopup = ({ onSave, name }) => {
           </div>
         )}
       </Popup>
-   
   );
 };
 
